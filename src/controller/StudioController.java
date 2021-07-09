@@ -34,7 +34,6 @@ public class StudioController extends JFrame implements ActionListener{
                 public void actionPerformed(ActionEvent e) {          
                     
                     SeatView seatVw=new SeatView();
-                    seatVw.setLocationRelativeTo(null);
                     seatVw.setVisible(true);
                     studioView.setVisible(false);
                     SeatModel seatModel=new SeatModel(); 
@@ -49,7 +48,6 @@ public class StudioController extends JFrame implements ActionListener{
                 studioView.setVisible(false);
                 IndexView indexView=new IndexView();
                 IndexController indexController=new IndexController(indexView);
-                indexView.setLocationRelativeTo(null);
                 indexView.setVisible(true);                        
             }
         });

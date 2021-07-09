@@ -38,7 +38,6 @@ public class DashboardController extends JFrame implements ActionListener{
                         public void actionPerformed(ActionEvent e) {                                             
                             dashVw.setVisible(false);
                             UserView csVw=new UserView();
-                            csVw.setLocationRelativeTo(null);
                             csVw.setVisible(true);  
                             CustomerModel cstMod=new CustomerModel();
                             if (cstMod.getBanyakData()!=0) {
@@ -78,8 +77,7 @@ public class DashboardController extends JFrame implements ActionListener{
                             csVw.getBtnKembali().addActionListener(new ActionListener() {
                                 @Override
                                 public void actionPerformed(ActionEvent e) {                                          
-                                    csVw.setVisible(false); 
-                                    dashVw.setLocationRelativeTo(null);
+                                    csVw.setVisible(false);                                                                        
                                     dashVw.setVisible(true);                        
                                 }
                             });
@@ -90,7 +88,6 @@ public class DashboardController extends JFrame implements ActionListener{
                         @Override
                         public void actionPerformed(ActionEvent e) {   
                             StudioView studio=new StudioView();
-                            studio.setLocationRelativeTo(null);
                             studio.setVisible(true);
                             SeatModel seatMd=new SeatModel();
                             JButton[] btnStudio={studio.btnstudio1,studio.btnstudio2,studio.btnstudio3};        
@@ -100,7 +97,6 @@ public class DashboardController extends JFrame implements ActionListener{
                                     public void actionPerformed(ActionEvent e) { 
                                         System.out.println(button.getText());
                                         AlertView alert=new AlertView();
-                                        alert.setLocationRelativeTo(null);
                                         alert.setVisible(true);
                                         alert.lalert.setText("Ingin mereset bangku pesanan "+button.getText()+"?");
                                         alert.btnyes.addActionListener(new ActionListener() {
@@ -116,7 +112,7 @@ public class DashboardController extends JFrame implements ActionListener{
                                                 alert.setVisible(false);
                                             }
                                         });
-  
+                                        
                                         
                                     }
                                 });                             
@@ -126,7 +122,6 @@ public class DashboardController extends JFrame implements ActionListener{
                                 @Override
                                 public void actionPerformed(ActionEvent e) {                                          
                                     studio.setVisible(false);
-                                    dashVw.setLocationRelativeTo(null);
                                     dashVw.setVisible(true);                        
                                 }
                             });    
@@ -137,7 +132,6 @@ public class DashboardController extends JFrame implements ActionListener{
                                 public void actionPerformed(ActionEvent e) {                                                                              
                                     dashVw.setVisible(false);
                                     MovieView mvVw=new MovieView();
-                                    mvVw.setLocationRelativeTo(null);
                                     mvVw.setVisible(true);
                                     MovieController mvCtr=new MovieController(mvVw);
                                 }
@@ -148,13 +142,11 @@ public class DashboardController extends JFrame implements ActionListener{
                         dashVw.setVisible(false);
                         IndexView indexView=new IndexView();
                         IndexController indexController=new IndexController(indexView);
-                        indexView.setLocationRelativeTo(null);
                         indexView.setVisible(true);                        
                     }
                 }); 
         InstalasiDatabase install=new InstalasiDatabase();        
         if(install.checkMovie() && install.checkSeat()){
-            dashVw.setLocationRelativeTo(null);
             dashVw.btninstall.setEnabled(true);
         }else{
             dashVw.btninstall.setEnabled(false);
@@ -192,7 +184,6 @@ public class DashboardController extends JFrame implements ActionListener{
                                     dashVw.setVisible(false);
                                     IndexView indexView=new IndexView();
                                     IndexController indexController=new IndexController(indexView);
-                                    indexView.setLocationRelativeTo(null);
                                     indexView.setVisible(true);                                       
                                 }
                             });             
