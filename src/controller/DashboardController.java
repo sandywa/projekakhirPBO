@@ -91,6 +91,7 @@ public class DashboardController extends JFrame implements ActionListener{
                         public void actionPerformed(ActionEvent e) {   
                             StudioView studio=new StudioView();
                             studio.setLocationRelativeTo(null);
+                            dashVw.setVisible(false);
                             studio.setVisible(true);
                             SeatModel seatMd=new SeatModel();
                             JButton[] btnStudio={studio.btnstudio1,studio.btnstudio2,studio.btnstudio3};        
