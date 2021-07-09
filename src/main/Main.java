@@ -5,7 +5,18 @@
  */
 package main;
 
+import controller.IndexController;
+import controller.SeatController;
+import model.CustomerModel;
+import model.MovieModel;
+import model.SeatModel;
+import view.IndexView;
+import view.SeatView;
 
+/**
+ *
+ * @author Lenovo ideapad
+ */
 public class Main {
 
     /**
@@ -26,6 +37,9 @@ public class Main {
 //        String data[]=setMod.readSeat("ST2","A1");
 //        System.out.println(data[3]);
 //        StudioModel model=new StudioModel();
+        IndexView view=new IndexView();          
+        IndexController startView=new IndexController(view);
+
 
 //        String Studio[]={"Studio 1","Studio 2","Studio 3"};
 //        String sVar[]={
