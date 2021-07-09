@@ -7,6 +7,7 @@ package controller;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.JOptionPane;
 import model.RegisterModel;
 import view.IndexView;
 import view.RegisterView;
@@ -34,11 +35,12 @@ class RegisterController {
                 user[3]=regView.tfno.getText();    
                 System.out.println(user[3]);
                 if(user[1].equals("") || user[2].equals("") || user[3].equals("")){
-                    regView.setVisible(false);
-                        IndexView indexView=new IndexView();
-                        IndexController indexController=new IndexController(indexView);
-                        indexView.setLocationRelativeTo(null);
-                        indexView.setVisible(true);
+                    JOptionPane.showMessageDialog(null,"Form Masih Ada Yang Kosong!");
+                }else if(user[2].matches("[0-9]+") == false){
+                   JOptionPane.showMessageDialog(null, "Usia Harus Angka Saja");
+                }
+                else if(user[3].matches("[0-9]+") == false){
+                   JOptionPane.showMessageDialog(null, "Nomor Telepon Hanya Angka Saja");
                 }else{
                     StudioView stView=new StudioView();
                     stView.setLocationRelativeTo(null);

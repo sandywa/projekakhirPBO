@@ -16,6 +16,7 @@ import view.AlertView;
 import view.DetailView;
 import view.SeatView;
 import view.StudioView;
+import view.RegisterView;
 
 /**
  *
@@ -59,7 +60,7 @@ public class SeatController extends JFrame implements ActionListener{
         button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                System.out.println(studio);                
+               System.out.println(studio);                
                String temp[]= seatModel.readSeat(studio, button.getText());
                if(Integer.parseInt(temp[2])==0){
                    System.out.println(temp[2]);
@@ -73,6 +74,10 @@ public class SeatController extends JFrame implements ActionListener{
                             RegisterModel regModel = new RegisterModel();                            
                             regModel.insertData(data[1], data[2], data[3], studio, button.getText());
                             alert.setVisible(false);
+                            RegisterView registerView = new RegisterView();
+                            RegisterController registerController = new RegisterController(registerView,regModel);
+                            registerView.setVisible(true);
+                            seatVw.setVisible(false);
                         }
                     });
                    alert.btnno.addActionListener(new ActionListener() {
