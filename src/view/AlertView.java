@@ -47,7 +47,6 @@ public class AlertView extends javax.swing.JFrame {
 
         btnno.setBackground(new java.awt.Color(240, 84, 84));
         btnno.setForeground(new java.awt.Color(0, 0, 0));
-        btnno.setSelected(true);
         btnno.setText("No");
         btnno.setToolTipText("");
 
